@@ -1,0 +1,3367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="A modern and innovative personal website with seamless animations and user-friendly design">
+    <title>𝗦𝗠𝗔𝗥𝗧 𝐒𝐭𝐨𝐫𝐞</title>
+    <link href="https://fonts.googleapis.com/css2?family=Mada&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.css" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.js"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    
+    <style>
+        
+        /* Global Reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Body */
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: #111;
+            color: #fff;
+            line-height: 1.6;
+            overflow-x: hidden;
+            transition: all 0.3s ease;
+        }
+
+        /* Navigation */
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background-color: rgba(0, 0, 0, 0.8);
+            padding: 20px;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        }
+
+        nav .nav-items {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+        }
+
+        nav a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 1.2rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #3282B8;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            background: url('https://source.unsplash.com/random/1920x1080?tech,web') no-repeat center center/cover;
+            position: relative;
+            color: #fff;
+            text-align: center;
+            padding: 0 20px;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            font-weight: 600;
+            animation: slideIn 2s ease-out;
+        }
+
+        .hero p {
+            font-size: 1.1rem;
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            animation: fadeIn 2s ease-out;
+        }
+
+        @keyframes slideIn {
+            0% { transform: translateY(-50px); opacity: 0; }
+            100% { transform: translateY(0); opacity: 1; }
+        }
+
+        @keyframes fadeIn {
+            0% { opacity: 0; }
+            100% { opacity: 1; }
+        }
+
+        /* Sections */
+        .section {
+            padding: 60px 20px;
+            text-align: center;
+            background-color: #111;
+            transition: transform 0.3s ease, opacity 0.3s ease;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            color: #3282B8;
+            font-weight: 600;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+            color: #ddd;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 30px;
+        }
+
+        /* Card Styling */
+        .card {
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .card h3 {
+            font-size: 1.5rem;
+            color: #3282B8;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .card p {
+            color: #bbb;
+            font-size: 1rem;
+        }
+
+        /* Testimonials Section */
+        .testimonials {
+            background: #222;
+            padding: 50px 20px;
+        }
+
+        .testimonial {
+            max-width: 800px;
+            margin: 20px auto;
+            background: #333;
+            border-radius: 8px;
+            padding: 30px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+        }
+
+        .testimonial p {
+            font-style: italic;
+            color: #bbb;
+        }
+
+        .testimonial h3 {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #fff;
+        }
+
+        /* Social Links */
+        .social-links a {
+            margin: 10px;
+            font-size: 1.5rem;
+            color: #BBE1FA;
+            transition: color 0.3s ease;
+        }
+
+        .social-links a:hover {
+            color: #3282B8;
+        }
+
+        /* Buttons */
+        .btn {
+            padding: 12px 25px;
+            border: 2px solid #3282B8;
+            background: transparent;
+            color: #BBE1FA;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            border-radius: 25px;
+            font-size: 1.2rem;
+            transition: all 0.3s ease;
+            display: inline-block;
+            margin-top: 20px;
+        }
+
+        .btn:hover {
+            background: #3282B8;
+            color: #fff;
+            transform: translateY(-5px);
+        }
+
+        /* Dark Mode */
+        .dark-mode {
+            background-color: #333;
+            color: #fff;
+        }
+
+        /* Progress Bar */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 5px;
+            width: 0;
+            background-color: #3282B8;
+            z-index: 1000;
+        }
+
+        /* Footer */
+        footer {
+            padding: 40px 20px;
+            background: #111;
+            text-align: center;
+            color: #ddd;
+            font-size: 1rem;
+            position: relative;
+            z-index: 1;
+        }
+
+        /* 3D Button Styling */
+        .btn-3d {
+            position: relative;
+            background-color: #3282B8;
+            color: #fff;
+            padding: 12px 24px;
+            font-size: 1.2rem;
+            font-weight: 700;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            display: inline-block;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .btn-3d:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+        }
+
+        .btn-3d:active {
+            transform: translateY(2px);
+        }
+        body {
+        font-family: 'Roboto', sans-serif;
+    }
+    h2 {
+        font-family: 'Cairo', sans-serif;
+    }
+        /* Back to top button */
+        .back-to-top {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background: #3282B8;
+            color: #fff;
+            font-size: 2rem;
+            border-radius: 50%;
+            padding: 12px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s ease;
+            display: none;
+        }
+
+        .back-to-top.show {
+            display: block;
+        }
+
+        /* Responsive Design */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero p {
+                font-size: 1rem;
+            }
+
+            .section h2 {
+                font-size: 2rem;
+            }
+
+            .section p {
+                font-size: 1rem;
+            }
+
+            .testimonial p {
+                font-size: 1rem;
+            }
+        }
+        .btn-3d {
+    position: relative;
+    background-color: #3282B8;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-3d:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-3d:active {
+    transform: translateY(2px) scale(0.95);
+}
+.card {
+    perspective: 1000px;
+}
+
+.card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.5s;
+    transform-style: preserve-3d;
+}
+
+.card:hover .card-inner {
+    transform: rotateY(10deg);
+}
+
+.card-front, .card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+}
+
+.card-back {
+    transform: rotateY(180deg);
+}
+.fade-in {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.fade-in.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+.hero {
+    background: url('https://source.unsplash.com/random/1920x1080?tech,web') no-repeat center center/cover;
+    animation: backgroundAnimation 10s infinite alternate;
+}
+
+@keyframes backgroundAnimation {
+    0% { background-position: 0% 0%; }
+    100% { background-position: 100% 100%; }
+}
+.loader {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #111;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 9999;
+}
+
+.loader.hidden {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+    pointer-events: none;
+}
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080?tech,web') no-repeat center center/cover;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+    overflow: hidden;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the background */
+}
+
+.hero h1 {
+    font-size: 4rem; /* Increased font size for better visibility */
+    font-weight: 700; /* Bolder font weight */
+    margin-bottom: 20px; /* Space below the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Increased font size for better visibility */
+    margin-bottom: 30px; /* Space below the paragraph */
+    max-width: 800px; /* Limit width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.btn-3d {
+    position: relative;
+    background-color: #3282B8;
+    color: #fff;
+    padding: 12px 24px;
+    font-size: 1.2rem;
+    font-weight: 700;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+    text-decoration: none;
+    display: inline-block;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.btn-3d:hover {
+    transform: translateY(-4px) scale(1.05);
+    box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+}
+
+.btn-3d:active {
+    transform: translateY(2px) scale(0.95);
+}
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #111;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3282B8;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #ddd;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    line-height: 1.6; /* تحسين تباعد الأسطر */
+}
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* إضافة مسافة بين البطاقات */
+}
+
+.card {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 300px; /* جعل البطاقات مرنة */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #3282B8;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card p {
+    color: #bbb;
+    font-size: 1rem;
+}
+.projects-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* إضافة مسافة بين البطاقات */
+}
+.social-links {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* إضافة مسافة بين الروابط الاجتماعية */
+}
+
+.social-links a {
+    font-size: 1.5rem;
+    color: #BBE1FA;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #3282B8;
+}
+footer {
+    padding: 40px 20px;
+    background: #111;
+    text-align: center;
+    color: #ddd;
+    font-size: 1rem;
+    position: relative;
+    z-index: 1;
+    border-top: 1px solid #3282B8; /* إضافة خط علوي */
+}
+nav {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    padding: 15px 20px;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+    transition: background-color 0.3s ease;
+}
+
+.nav-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8rem;
+    font-weight: bold;
+    color: #3282B8;
+}
+
+.nav-items {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    transition: color 0.3s ease;
+}
+
+nav a:hover {
+    color: #BBE1FA; /* تغيير اللون عند التمرير */
+}
+
+.btn-toggle {
+    background: none;
+    border: none;
+    color: #fff;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+.hero {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://source.unsplash.com/random/1920x1080?tech,web') no-repeat center center/cover;
+    position: relative;
+    color: #fff;
+    text-align: center;
+    padding: 0 20px;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensure content is above the background */
+}
+
+.hero h1 {
+    font-size: 4rem; /* Increased font size for better visibility */
+    font-weight: 700; /* Bolder font weight */
+    margin-bottom: 20px; /* Space below the heading */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+
+.hero p {
+    font-size: 1.5rem; /* Increased font size for better visibility */
+    margin-bottom: 30px; /* Space below the paragraph */
+    max-width: 800px; /* Limit width for better readability */
+    margin-left: auto;
+    margin-right: auto;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.7); /* Text shadow for better readability */
+}
+.section {
+    padding: 60px 20px;
+    text-align: center;
+    background-color: #111;
+    transition: transform 0.3s ease, opacity 0.3s ease;
+}
+
+.section h2 {
+    font-size: 2.5rem;
+    margin-bottom: 20px;
+    color: #3282B8;
+    font-weight: 600;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+}
+
+.section p {
+    font-size: 1.1rem;
+    color: #ddd;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 30px;
+    line-height: 1.6; /* تحسين تباعد الأسطر */
+}
+
+/* Skills Section */
+.skills-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* إضافة مسافة بين البطاقات */
+}
+
+.card {
+    background-color: #222;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 30px;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    flex: 1 1 300px; /* جعل البطاقات مرنة */
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card h3 {
+    font-size: 1.5rem;
+    color: #3282B8;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+.card p {
+    color: #bbb;
+    font-size: 1rem;
+}
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: #3282B8;
+    z-index: 1000;
+}
+@media (max-width: 768px) {
+    .hero h1 {
+        font-size: 2.5rem;
+    }
+
+    .hero p {
+        font-size: 1rem;
+    }
+
+    .section h2 {
+        font-size: 2rem;
+    }
+
+    .section p {
+        font-size: 1rem;
+    }
+
+    .card {
+        margin: 10px; /* تقليل المسافة بين البطاقات */
+    }
+
+    .nav-items {
+        flex-direction: column; /* تغيير اتجاه العناصر في الشريط العلوي */
+        gap: 10px; /* إضافة مسافة بين العناصر */
+    }
+}
+.blog-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 20px; /* إضافة مسافة بين البطاقات */
+}
+.contact-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin: 10px 0;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background-color: #3282B8;
+    color: #fff;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.contact-form button:hover {
+    background-color: #005f73;
+}
+.testimonial {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #333;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.testimonial p {
+    font-style: italic;
+    color: #bbb;
+}
+
+.testimonial h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: #fff;
+}
+.award {
+    max-width: 800px;
+    margin: 20px auto;
+    background: #222;
+    border-radius: 8px;
+    padding: 30px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
+}
+
+.award h3 {
+    font-size: 1.5rem;
+    color: #3282B8;
+    margin-bottom: 10px;
+}
+
+.award p {
+    color: #bbb;
+}
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 5px;
+    width: 0;
+    background-color: #3282B8;
+    z-index: 1000;
+}
+/* Navigation Animation */
+nav {
+    animation: slideDown 1s ease-out;
+}
+
+@keyframes slideDown {
+    0% {
+        transform: translateY(-100%);
+        opacity: 0;
+    }
+    100% {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.nav-items a {
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-items a::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    bottom: 0;
+    left: -100%;
+    background-color: #3282B8;
+    transition: left 0.3s ease;
+}
+
+.nav-items a:hover::before {
+    left: 0;
+}
+    </style>
+</head>
+<body>
+<!-- Navigation for PC -->
+<nav class="pc-nav">
+    <div class="nav-container">
+        <div class="logo">𝗦𝗠𝗔𝗥𝗧</div>
+        <div class="nav-items">
+            <a href="#home">الرئيسية</a>
+            <a href="#how-it-all-started">من نحن</a>
+            <a href="#services">الخدمات</a>
+            <a href="#tweaks">تويك للبي سي</a>
+            <a href="#special-projects">مشاريع خاصة</a>
+            <a href="#social-media">وسائل التواصل الاجتماعي</a>
+            <a href="#behind-the-scenes">وراء الكواليس</a>
+            <a href="#faq">الأسئلة الشائعة</a>
+            <a href="#terms">الشروط والأحكام</a>
+          
+        </div>
+    </div>
+</nav>
+
+<style>
+    .pc-nav {
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        .pc-nav {
+            display: none;
+        }
+    }
+</style>
+<!-- Sidebar Navigation -->
+<div id="sidebar" class="sidebar">
+    <button class="close-btn" onclick="toggleSidebar()">×</button>
+    <a href="#home">الرئيسية</a>
+    <a href="#how-it-all-started">من نحن</a>
+    <a href="#services">الخدمات</a>
+    <a href="#tweaks">تويك للبي سي</a>
+    <a href="#special-projects">مشاريع خاصة</a>
+    <a href="#social-media">وسائل التواصل الاجتماعي</a>
+    <a href="#behind-the-scenes">وراء الكواليس</a>
+    <a href="#faq">الأسئلة الشائعة</a>
+    <a href="#terms">الشروط والأحكام</a>
+</div>
+
+<!-- Open Sidebar Button -->
+<button class="open-btn" onclick="toggleSidebar()">☰</button>
+
+<style>
+    .sidebar {
+        height: 100%;
+        width: 0;
+        position: fixed;
+        top: 0;
+        left: 0;
+        background-color: #111;
+        overflow-x: hidden;
+        transition: width 0.5s ease;
+        padding-top: 60px;
+        z-index: 1001;
+    }
+
+    .sidebar a {
+        padding: 10px 15px;
+        text-decoration: none;
+        font-size: 1.2rem;
+        color: #fff;
+        display: block;
+        transition: color 0.3s ease;
+    }
+
+    .sidebar a:hover {
+        color: #3282B8;
+    }
+
+    .sidebar .close-btn {
+        position: absolute;
+        top: 20px;
+        right: 25px;
+        font-size: 2rem;
+        background: none;
+        border: none;
+        color: #fff;
+        cursor: pointer;
+    }
+
+    .open-btn {
+        font-size: 1.5rem;
+        cursor: pointer;
+        background: none;
+        border: none;
+        color: #fff;
+        padding: 10px 15px;
+        position: fixed;
+        top: 20px;
+        left: 20px;
+        z-index: 1002;
+    }
+
+    @media (min-width: 769px) {
+        .sidebar, .open-btn {
+            display: none;
+        }
+    }
+</style>
+
+<script>
+    function toggleSidebar() {
+        const sidebar = document.getElementById('sidebar');
+        if (sidebar.style.width === '250px') {
+            sidebar.style.width = '0';
+        } else {
+            sidebar.style.width = '250px';
+        }
+    }
+
+    document.querySelectorAll('.sidebar a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+            toggleSidebar();
+        });
+    });
+</script>
+  <!-- Hero Section -->
+<section class="hero" id="home">
+    <div class="hero-content">
+        <h1 class="typing-effect">𝗦𝗠𝗔𝗥𝗧 𝐒𝐭𝐨𝐫𝐞</h1>
+        <p>"كل ما يخص البي سي هنا"</p>
+        <a href="#how-it-all-started" class="btn-3d">استكشف</a>
+    </div>
+</section>
+
+<style>
+    .typing-effect {
+        overflow: hidden;
+        white-space: nowrap;
+        border-right: 3px solid;
+        animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: #3282B8; }
+    }
+</style>
+
+
+<script>
+    function resetTypingAnimation() {
+        const typingElement = document.querySelector('.typing-effect');
+        typingElement.style.animation = 'none';
+        typingElement.offsetHeight; // Trigger reflow
+        typingElement.style.animation = 'typing 3s steps(30, end), blink-caret 0.75s step-end infinite';
+    }
+
+    setInterval(resetTypingAnimation, 5000); // Repeat every 5 seconds
+</script>
+
+<!-- How It All Started Section -->
+<section class="section pc-only" id="how-it-all-started">
+    <h2>من نحن </h2>
+    <div class="story-container">
+        <div class="story-content">
+            <p>إحنا فريق متخصص في تحسين أداء أجهزة الكمبيوتر وتقديم حلول متكاملة لتسريعها. بنهتم بكل التفاصيل اللي تساعد جهازك يشتغل بكفاءة، سواء عن طريق ضبط الإعدادات، تسريع الأداء، أو إزالة الملفات الزايدة اللي بتأثر على سرعة الجهاز.</p>
+            <p>كمان بنوفر خدمات زي تنزيل وتحديث البرامج المهمة، تسطيب أنظمة التشغيل زي الويندوز بأحدث الإصدارات، والتأكد من ضبط كل حاجة بحيث تكون جاهزة للاستخدام بسهولة.</p>
+            <p>متخصص في المونتاج بطريقة بسيطة و برمجة المواقع و الالعاب </p>
+            <p>هدفنا إنك تستمتع بجهاز سريع وسلس، سواء كنت بتستخدمه للشغل، الألعاب، أو أي حاجة تانية. إحنا هنا عشان نحل أي مشكلة بتواجهك ونوفر تجربة أفضل لتكنولوجيا الكمبيوتر.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .story-container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: left;
+        background-color: #222;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .story-content p {
+        color: #bbb;
+        font-size: 1.1rem;
+        line-height: 1.6;
+        margin-bottom: 20px;
+    }
+
+    @media (max-width: 768px) {
+        .pc-only {
+            display: none;
+        }
+    }
+</style>
+    <!-- How It All Started Section for Mobile -->
+    <section class="section mobile-how-it-all-started" id="how-it-all-started-mobile">
+        <h2>من نحن</h2>
+        <div class="mobile-story-container">
+            <div class="mobile-story-content">
+                <p>نحن فريق متخصص في تحسين أداء أجهزة الكمبيوتر وتقديم حلول متكاملة لتسريعها. نهتم بكل التفاصيل التي تساعد جهازك على العمل بكفاءة، سواء عن طريق ضبط الإعدادات، تسريع الأداء، أو إزالة الملفات الزائدة التي تؤثر على سرعة الجهاز.</p>
+                <p>نوفر خدمات مثل تنزيل وتحديث البرامج المهمة، تثبيت أنظمة التشغيل مثل الويندوز بأحدث الإصدارات، والتأكد من ضبط كل شيء بحيث يكون جاهزًا للاستخدام بسهولة.</p>
+                <p>متخصصون في المونتاج بطريقة بسيطة وبرمجة المواقع والألعاب.</p>
+                <p>هدفنا هو أن تستمتع بجهاز سريع وسلس، سواء كنت تستخدمه للعمل، الألعاب، أو أي شيء آخر. نحن هنا لحل أي مشكلة تواجهك وتوفير تجربة أفضل لتكنولوجيا الكمبيوتر.</p>
+            </div>
+        </div>
+    </section>
+
+    <style>
+        .mobile-how-it-all-started {
+            display: none;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-how-it-all-started {
+                display: block;
+            }
+
+            .story-container {
+                display: none;
+            }
+
+            .mobile-story-container {
+                max-width: 100%;
+                margin: 0 auto;
+                text-align: center;
+                background-color: #333;
+                padding: 20px;
+                border-radius: 8px;
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            }
+
+            .mobile-story-content p {
+                color: #fff;
+                font-size: 1rem;
+                line-height: 1.4;
+                margin-bottom: 15px;
+            }
+        }
+    </style>
+<!-- Services Section for PC -->
+<section class="section pc-only" id="services">
+    <h2>خدماتي</h2>
+    <div class="services-container">
+        <div class="service-item">
+            <i class="fas fa-gamepad"></i>
+            <h3>برمجة الألعاب</h3>
+            <p>تطوير ألعاب مبتكرة وممتعة باستخدام أحدث التقنيات.</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-video"></i>
+            <h3>مونتاج الفيديو</h3>
+            <p>تحرير ومونتاج الفيديوهات بجودة عالية.</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-code"></i>
+            <h3>برمجة الويب</h3>
+            <p>تصميم وتطوير مواقع ويب تفاعلية وجذابة.</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-tools"></i>
+            <h3>عمل تويك للبي سي</h3>
+            <p>تحسين أداء جهاز الكمبيوتر الخاص بك.</p>
+        </div>
+        <div class="service-item">
+            <i class="fas fa-wrench"></i>
+            <h3>صيانة البي سي</h3>
+            <p>صيانة وإصلاح أجهزة الكمبيوتر.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .pc-only {
+        display: block;
+    }
+
+    @media (max-width: 768px) {
+        .pc-only {
+            display: none;
+        }
+    }
+</style>
+<!-- Services Section for Mobile -->
+<section class="section mobile-only" id="services-mobile">
+    <h2>خدماتي</h2>
+    <div class="mobile-services-container">
+        <div class="mobile-service-item">
+            <i class="fas fa-gamepad"></i>
+            <h3>برمجة الألعاب</h3>
+            <p>تطوير ألعاب مبتكرة وممتعة باستخدام أحدث التقنيات.</p>
+        </div>
+        <div class="mobile-service-item">
+            <i class="fas fa-video"></i>
+            <h3>مونتاج الفيديو</h3>
+            <p>تحرير ومونتاج الفيديوهات بجودة عالية.</p>
+        </div>
+        <div class="mobile-service-item">
+            <i class="fas fa-code"></i>
+            <h3>برمجة الويب</h3>
+            <p>تصميم وتطوير مواقع ويب تفاعلية وجذابة.</p>
+        </div>
+        <div class="mobile-service-item">
+            <i class="fas fa-tools"></i>
+            <h3>عمل تويك للبي سي</h3>
+            <p>تحسين أداء جهاز الكمبيوتر الخاص بك.</p>
+        </div>
+        <div class="mobile-service-item">
+            <i class="fas fa-wrench"></i>
+            <h3>صيانة البي سي</h3>
+            <p>صيانة وإصلاح أجهزة الكمبيوتر.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .mobile-only {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-only {
+            display: block;
+        }
+
+        .pc-only {
+            display: none;
+        }
+
+        .mobile-services-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .mobile-service-item {
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 90%;
+        }
+
+        .mobile-service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-service-item i {
+            font-size: 2rem;
+            color: #3282B8;
+            margin-bottom: 10px;
+        }
+
+        .mobile-service-item h3 {
+            font-size: 1.3rem;
+            color: #3282B8;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .mobile-service-item p {
+            color: #bbb;
+            font-size: 1rem;
+        }
+    }
+</style>
+<!-- Payment Methods Section for PC -->
+<section class="section pc-only" id="payment-methods">
+    <h2>طرق الدفع</h2>
+    <div class="payment-methods-container">
+        <div class="card">
+            <i class="fab fa-paypal"></i>
+            <span>PayPal</span>
+        </div>
+        <div class="card">
+            <i class="fab fa-cc-visa"></i>
+            <span>Visa</span>
+        </div>
+        <div class="card">
+            <i class="fab fa-cc-mastercard"></i>
+            <span>MasterCard</span>
+        </div>
+        <div class="card">
+            <i class="fas fa-dollar-sign"></i>
+            <span>InstaPay</span>
+        </div>
+    </div>
+</section>
+
+<style>
+    .payment-methods-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        background-color: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        margin: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex: 1 1 200px;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card i {
+        font-size: 2.5rem;
+        color: #3282B8;
+        margin-bottom: 10px;
+    }
+
+    .card span {
+        color: #bbb;
+        font-size: 1rem;
+    }
+</style>
+
+<!-- Payment Methods Section for Mobile -->
+<section class="section mobile-only" id="payment-methods-mobile">
+    <h2>طرق الدفع</h2>
+    <div class="mobile-payment-methods-container">
+        <div class="mobile-card">
+            <i class="fab fa-paypal"></i>
+            <span>PayPal</span>
+        </div>
+        <div class="mobile-card">
+            <i class="fab fa-cc-visa"></i>
+            <span>Visa</span>
+        </div>
+        <div class="mobile-card">
+            <i class="fab fa-cc-mastercard"></i>
+            <span>MasterCard</span>
+        </div>
+        <div class="mobile-card">
+            <i class="fas fa-dollar-sign"></i>
+            <span>InstaPay</span>
+        </div>
+    </div>
+</section>
+
+<style>
+    .mobile-only {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-only {
+            display: block;
+        }
+
+        .pc-only {
+            display: none;
+        }
+
+        .mobile-payment-methods-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .mobile-card {
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            width: 90%;
+        }
+
+        .mobile-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-card i {
+            font-size: 2rem;
+            color: #3282B8;
+            margin-bottom: 10px;
+        }
+
+        .mobile-card span {
+            color: #bbb;
+            font-size: 1rem;
+        }
+    }
+</style>
+    <style>
+        .contact-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-top: 20px;
+        }
+
+        .contact-btn {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .phone-btn {
+            background-color: #3282B8;
+        }
+
+        .whatsapp-btn {
+            background-color: #3282B8;
+        }
+
+        .contact-btn:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .contact-btn i {
+            font-size: 1.5rem;
+        }
+    </style>
+    </section>
+
+    <style>
+        .services-container {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+
+        .service-item {
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            padding: 30px;
+            margin: 20px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            flex: 1 1 300px;
+        }
+
+        .service-item:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .service-item i {
+            font-size: 2.5rem;
+            color: #3282B8;
+            margin-bottom: 10px;
+        }
+
+        .service-item h3 {
+            font-size: 1.5rem;
+            color: #3282B8;
+            margin-bottom: 10px;
+            font-weight: 600;
+        }
+
+        .service-item p {
+            color: #bbb;
+            font-size: 1rem;
+        }
+    </style>
+  
+
+<!-- Animation for Cards -->
+<style>
+    .card {
+        transform: scale(1);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+</style>
+<!-- Tweaks Section -->
+<section class="section" id="tweaks">
+    <h2>تويك للبي سي</h2>
+    <div class="tweaks-container">
+        <!-- Basic Tweak -->
+        <div class="tweak-item">
+            <img src="photo 3.png" alt="Basic Tweak" class="tweak-image">
+            <h3>تويك بسيط</h3>
+            <p>سأقوم بتحسين أداء الرام و المعالج بشكل بسيط لزيادة السرعة.</p>
+            <p>السعر: مجاني</p>
+            <p>المزايا: تحسين استجابة النظام وزيادة الكفاءة</p>
+            <a href="https://mega.nz/folder/h2UmnCxB#LUvaPyCPEve8KJf1BtfAVQ" class="btn-3d" target="_blank">تحميل</a>
+        </div>
+        
+        <!-- Tweak Plus -->
+        <div class="tweak-item">
+            <img src="photo 1.png" alt="Tweak Plus" class="tweak-image">
+            <h3>تويك بلس (تويك شامل)</h3>
+            <p>تسريع جميع مكونات الجهاز بشكل كامل!</p>
+            <ul>
+                <li>المعالج (CPU)</li>
+                <li>بطاقة الرسومات (GPU)</li>
+                <li>الذاكرة العشوائية (RAM)</li>
+                <li>القرص الصلب (SSD/HDD)</li>
+                <li>الفأرة (Mouse)</li>
+                <li>لوحة المفاتيح (Keyboard)</li>
+            </ul>
+            <p>السعر: 350ج</p>
+            <p>المزايا: تحسين شامل يضمن سرعة استجابة أفضل وأداء متفوق</p>
+
+            <!-- Purchase Button for Tweak Plus -->
+            <a href="https://mohamed-ahmedmagnificent.sellfy.store/p/smart-tweak-plus/" class="btn-3d purchase-btn" target="_blank">شراء الآن</a>
+            <!-- InstaPay Button for Tweak Plus -->
+            <a href="https://ipn.eg/S/gamayka60/instapay/3fRRQg" class="btn-3d instapay-btn" target="_blank">ادفع عن طريق InstaPay</a>
+        </div>        
+    </div>
+</section>
+<!-- Support Section -->
+<section class="section" id="support">
+    <h2>الدعم وطرق الدفع</h2>
+    <div class="contact-buttons">
+        <a href="tel:+201270273521" class="contact-btn phone-btn">
+            <i class="fas fa-phone"></i>
+            <span>اتصل بنا</span>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=01270273521&text&type=phone_number&app_absent=0" class="contact-btn whatsapp-btn" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span>واتساب</span>
+        </a>
+    </div>
+    <!-- Payment Notice -->
+    <div class="payment-notice">
+        <div class="message-bubble">
+            <p>طرق الدفع قريبا! سنعمل على تحسين وسائل الدفع لتوفير خيارات أكثر مرونة وسهولة. يمكنك في الوقت الحالي الدفع بالطريقة المفضلة لديك، ثم إرسال لقطة شاشة للإيصال. سيتم إرسال الملفات مع فيديو توضيحي عبر الخاص بعد إتمام الدفع.</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .purchase-btn, .instapay-btn {
+        display: inline-block;
+        padding: 12px 24px;
+        font-size: 1.2rem;
+        font-weight: 700;
+        text-align: center;
+        text-decoration: none;
+        color: #fff;
+        background-color: #3282B8;
+        border-radius: 8px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+        transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+        margin: 10px 0;
+    }
+
+    .purchase-btn:hover, .instapay-btn:hover {
+        background-color: #005f73;
+        transform: translateY(-4px);
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.4);
+    }
+
+    .purchase-btn:active, .instapay-btn:active {
+        transform: translateY(2px);
+    }
+    #support {
+        background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+        padding: 40px 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        text-align: center;
+        color: #fff;
+    }
+
+    #support h2 {
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        color: #76c7c0;
+    }
+
+    .contact-buttons {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        margin-top: 20px;
+    }
+
+    .contact-btn {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        padding: 10px 20px;
+        border-radius: 5px;
+        text-decoration: none;
+        color: #fff;
+        font-size: 1.2rem;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        background-color: #3282B8;
+    }
+
+    .contact-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .contact-btn i {
+        font-size: 1.5rem;
+    }
+
+    .payment-notice {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        margin-top: 20px;
+    }
+
+    .message-bubble {
+        background-color: #333;
+        color: #fff;
+        padding: 15px 20px;
+        border-radius: 20px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        max-width: 80%;
+        animation: slideIn 0.5s ease-out;
+    }
+
+    @keyframes slideIn {
+        from {
+            transform: translateY(20px);
+            opacity: 0;
+        }
+        to {
+            transform: translateY(0);
+            opacity: 1;
+        }
+    }
+</style>
+<!-- PayPal SDK -->
+<script src="https://www.paypal.com/sdk/js?client-id=AUSA5XxEjgA1su6dCEnYsj63xsIBniZn591T4sxkZ8_k-aZ4TIMD_iKC1HqQBBwbGlsKQ7GNg47GYmug&vault=true&intent=subscription" data-sdk-integration-source="button-factory"></script>
+
+<script>
+    // PayPal button for Basic Tweak
+    paypal.Buttons({
+        style: {
+            shape: 'pill',
+            color: 'blue',
+            layout: 'vertical',
+            label: 'subscribe'
+        },
+        createSubscription: function(data, actions) {
+            return actions.subscription.create({
+                /* Creates the subscription */
+                plan_id: 'P-47E09578UM409580SM6IOFXY'
+            });
+        },
+        onApprove: function(data, actions) {
+            alert('تم الاشتراك بنجاح! معرف الاشتراك: ' + data.subscriptionID);
+        }
+    }).render('#paypal-button-container-P-47E09578UM409580SM6IOFXY'); // Renders the PayPal button
+
+    // PayPal button for Tweak Plus
+    paypal.Buttons({
+        style: {
+            shape: 'pill',
+            color: 'blue',
+            layout: 'vertical',
+            label: 'subscribe'
+        },
+        createSubscription: function(data, actions) {
+            return actions.subscription.create({
+                /* Creates the subscription */
+                plan_id: 'P-7DN88645GC9519607M6IN6ZA'
+            });
+        },
+        onApprove: function(data, actions) {
+            alert('تم الاشتراك بنجاح! معرف الاشتراك: ' + data.subscriptionID);
+        }
+    }).render('#paypal-button-container-P-7DN88645GC9519607M6IN6ZA'); // Renders the PayPal button
+</script>
+
+<style>
+    .service-item, .tweak-item {
+        background-color: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        margin: 20px;
+        text-align: center;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex: 1 1 300px;
+    }
+
+    .service-item:hover, .tweak-item:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .service-image, .tweak-image {
+        width: 100%;
+        height: auto;
+        border-radius: 8px;
+        transition: transform 0.3s ease;
+    }
+
+    .service-item:hover .service-image, .tweak-item:hover .tweak-image {
+        transform: scale(1.05);
+    }
+
+    .service-title, .tweak-item h3 {
+        font-size: 1.5rem;
+        color: #3282B8;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .service-description, .service-list, .service-price, .service-benefits, .tweak-item p, .tweak-item ul {
+        color: #bbb;
+        font-size: 1rem;
+    }
+
+    .service-list, .tweak-item ul {
+        list-style: none;
+        padding: 0;
+    }
+
+    .service-list li, .tweak-item ul li {
+        margin-bottom: 5px;
+    }
+
+    .price-value {
+        color: #76c7c0;
+        font-weight: bold;
+    }
+
+    .tweaks-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+</style>
+
+ <!-- Comparison Chart Section -->
+ <section class="section" id="comparison-chart">
+    <h2>مقارنة بين خدمة التويك بلس والتويك باسيك</h2>
+    <div class="comparison-chart-container">
+        <table class="comparison-chart">
+            <thead>
+                <tr>
+                    <th>الخدمة</th>
+                    <th>تويك بلس</th>
+                    <th>تويك باسيك</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Create A Restore Point</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>Window Settings</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>Cleanup</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>Latency Tweaks</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>CPU Priority (تعيين أولوية المعالج)</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>Activate Windows</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>Ram Optimization (تحسين رام)</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>Reg Optimization (تحسين أداء البي سي)</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>Disable Autoruns</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>Disable Windows Updates</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>Priority Separation</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>Disable Windows 11 Widgets</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>Revo Uninstaller</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>RAMMap</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>برنامج لتخفيف الضغط على الرامات</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>SMART TWEAKS PLUS</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+                <tr>
+                    <td>Download drivers GPU</td>
+                    <td>✔</td>
+                    <td>✘</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pricing">
+            <p>تويك باسيك (6 خدمات فقط): 0 جنيه مصري</p>
+            <p>تويك بلس (كل الخدمات): 350 جنيه مصري</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .comparison-chart-container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #222;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .comparison-chart {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .comparison-chart th, .comparison-chart td {
+        border: 1px solid #444;
+        padding: 10px;
+        color: #bbb;
+    }
+
+    .comparison-chart th {
+        background-color: #3282B8;
+        color: #fff;
+    }
+
+    .comparison-chart td {
+        background-color: #333;
+    }
+
+    .pricing {
+        color: #bbb;
+        font-size: 1.1rem;
+    }
+</style>
+
+<!-- Special Projects Section -->
+<section class="section" id="special-projects">
+    <h2>مشاريع خاصة</h2>
+    <div class="projects-container">
+        <div class="service-item">
+            <img src="photo 2.png" alt="Simple Web Development" class="service-image">
+            <h3 class="service-title">خدمة برمجة موقع بسيط</h3>
+            <p class="service-description">نحن نقدم لك تصميم وتطوير مواقع ويب بسيطة تضمن لك تجربة مستخدم جيدة وأداء مقبول.</p>
+            <ul class="service-list">
+                <li>تصميم واجهات مستخدم مبتكرة (UI/UX)</li>
+                <li>تطوير مواقع ديناميكية باستخدام JavaScript و PHP</li>
+                <li>تكامل مع أنظمة إدارة المحتوى (CMS)</li>
+            </ul>
+            <p>السعر: 1000 جنيه مصري</p>
+        </div>
+        <div class="service-item">
+            <img src="photo 4.png" alt="Professional Web Development" class="service-image">
+            <h3 class="service-title">خدمة برمجة موقع احترافي</h3>
+            <p class="service-description">نحن نقدم لك تصميم وتطوير مواقع ويب احترافية تضمن لك تجربة مستخدم احترافية وأداء سريع.</p>
+            <ul class="service-list">
+                <li>تصميم واجهات مستخدم مبتكرة (UI/UX)</li>
+                <li>تطوير مواقع ديناميكية باستخدام JavaScript و PHP</li>
+                <li>تكامل مع أنظمة إدارة المحتوى (CMS)</li>
+                <li>تحسين محركات البحث (SEO)</li>
+                <li>ضمان استجابة الموقع لجميع الأجهزة (Responsive Design)</li>
+            </ul>
+            <p>السعر: 3000 جنيه مصري</p>
+        </div>
+        
+    </div>
+</section>
+
+<!-- Comparison Chart Section -->
+<section class="section" id="comparison-chart">
+    <h2>مقارنة بين خدمة برمجة موقع بسيط وموقع احترافي</h2>
+    <div class="comparison-chart-container">
+        <table class="comparison-chart">
+            <thead>
+                <tr>
+                    <th>الخدمة</th>
+                    <th>موقع بسيط</th>
+                    <th>موقع احترافي</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>تصميم واجهات مستخدم مبتكرة (UI/UX)</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>تطوير مواقع ديناميكية باستخدام JavaScript و PHP</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>تكامل مع أنظمة إدارة المحتوى (CMS)</td>
+                    <td>✔</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>تحسين محركات البحث (SEO)</td>
+                    <td>✘</td>
+                    <td>✔</td>
+                </tr>
+                <tr>
+                    <td>ضمان استجابة الموقع لجميع الأجهزة (Responsive Design)</td>
+                    <td>✘</td>
+                    <td>✔</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="pricing">
+            <p>موقع بسيط: 1000 جنيه مصري</p>
+            <p>موقع احترافي: 3000 جنيه مصري</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .comparison-chart-container {
+        max-width: 800px;
+        margin: 0 auto;
+        text-align: center;
+        background-color: #222;
+        padding: 30px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .comparison-chart {
+        width: 100%;
+        border-collapse: collapse;
+        margin-bottom: 20px;
+    }
+
+    .comparison-chart th, .comparison-chart td {
+        border: 1px solid #444;
+        padding: 10px;
+        color: #bbb;
+    }
+
+    .comparison-chart th {
+        background-color: #3282B8;
+        color: #fff;
+    }
+
+.comparison-chart td {
+    background-color: #333;
+}
+
+.pricing {
+    color: #bbb;
+    font-size: 1.1rem;
+}
+</style>
+<section class="section" id="social-media">
+    <h2>روابط السوشيال ميديا</h2>
+    <div class="social-media-container">
+        <div class="card">
+            <a href="https://www.instagram.com/m.hamed.0" class="social-link" target="_blank">
+                <i class="fab fa-instagram"></i>
+                <span>Instagram</span>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://www.youtube.com/@Quran.1486" class="social-link" target="_blank">
+                <i class="fab fa-youtube"></i>
+                <span>YouTube</span>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://api.whatsapp.com/send/?phone=01270273521&text&type=phone_number&app_absent=0" class="social-link" target="_blank">
+                <i class="fab fa-whatsapp"></i>
+                <span>WhatsApp</span>
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://www.snapchat.com/add/sik_i99" class="social-link" target="_blank">
+                <i class="fab fa-snapchat"></i>
+                <span>Snapchat</span>
+            </a>
+        </div>
+    </div>
+</section>
+
+<style>
+    .social-media-container {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 30px;
+        margin-top: 30px;
+        perspective: 1000px;
+    }
+
+    .card {
+        background: linear-gradient(135deg, #1f1f1f, #2b2b2b);
+        border-radius: 15px;
+        padding: 30px;
+        text-align: center;
+        color: #fff;
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+        transform-style: preserve-3d;
+        transition: transform 0.6s ease, box-shadow 0.4s ease;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .card:hover {
+        transform: rotateY(15deg) rotateX(-10deg) scale(1.05);
+        box-shadow: 0 20px 40px rgba(0, 0, 0, 0.6);
+    }
+
+    .social-link {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        font-size: 1.2rem;
+        text-decoration: none;
+        color: inherit;
+        transition: color 0.3s ease;
+    }
+
+    .social-link:hover {
+        color: #76c7c0;
+    }
+
+    .social-link i {
+        font-size: 2.5rem;
+        margin-bottom: 10px;
+        transition: transform 0.5s ease, color 0.3s ease;
+    }
+
+
+    .card:hover .social-link i {
+        transform: rotateY(360deg);
+        color: #76c7c0;
+    }
+
+    .card::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -50%;
+        width: 200%;
+        height: 200%;
+        background: radial-gradient(circle at center, #76c7c0, transparent);
+        opacity: 0;
+        transition: opacity 0.6s ease;
+        z-index: -1;
+    }
+
+    .card:hover::before {
+        opacity: 0.1;
+    }
+
+    @media (max-width: 768px) {
+        #social-media {
+            display: none;
+        }
+    }
+</style>
+<!-- Social Media Links Section for Mobile -->
+<section class="section mobile-social-media" id="social-media-mobile">
+    <h2>روابط السوشيال ميديا</h2>
+    <div class="mobile-social-media-container">
+        <a href="https://www.instagram.com/m.hamed.0" class="mobile-social-link" target="_blank">
+            <i class="fab fa-instagram"></i>
+            <span>Instagram</span>
+        </a>
+        <a href="https://www.youtube.com/@Quran.1486" class="mobile-social-link" target="_blank">
+            <i class="fab fa-youtube"></i>
+            <span>YouTube</span>
+        </a>
+        <a href="https://api.whatsapp.com/send/?phone=01270273521&text&type=phone_number&app_absent=0" class="mobile-social-link" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+            <span>WhatsApp</span>
+        </a>
+        <a href="https://www.snapchat.com/add/sik_i99" class="mobile-social-link" target="_blank">
+            <i class="fab fa-snapchat"></i>
+            <span>Snapchat</span>
+        </a>
+    </div>
+</section>
+
+<style>
+    .mobile-social-media {
+        display: none;
+    }
+
+    @media (max-width: 768px) {
+        .mobile-social-media {
+            display: block;
+        }
+
+        .social-media-container {
+            display: none;
+        }
+
+        .mobile-social-media-container {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .mobile-social-link {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 10px 20px;
+            background-color: #222;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            text-decoration: none;
+            color: #fff;
+            font-size: 1.2rem;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        .mobile-social-link:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .mobile-social-link i {
+            font-size: 2rem;
+            color: #3282B8;
+        }
+
+        .mobile-social-link span {
+            color: #bbb;
+        }
+    }
+</style>
+<!-- Behind the Scenes Section -->
+<section class="section" id="behind-the-scenes">
+    <h2>كيف تم تطوير الموقع</h2>
+    <div class="behind-the-scenes-container">
+        <div class="card">
+            <h3>HTML</h3>
+            <p>تم استخدام HTML لإنشاء الهيكل الأساسي للموقع، مما يضمن تنظيم المحتوى بشكل منطقي وسهل القراءة.</p>
+        </div>
+        <div class="card">
+            <h3>CSS</h3>
+            <p>تم استخدام CSS لتنسيق وتصميم الموقع، بما في ذلك الألوان، الخطوط، والتخطيطات، مما يضمن تجربة مستخدم جذابة ومتجاوبة.</p>
+        </div>
+        <div class="card">
+            <h3>JavaScript</h3>
+            <p>تم استخدام JavaScript لإضافة التفاعلات والوظائف الديناميكية للموقع، مثل الرسوم المتحركة، التمرير السلس، والتفاعل مع المستخدم.</p>
+        </div>
+        <div class="card">
+            <h3>Frameworks and Libraries</h3>
+            <p>تم استخدام مكتبات وأطر عمل مثل AOS للرسوم المتحركة عند التمرير، وGSAP للرسوم المتحركة المتقدمة، وParticles.js للخلفيات التفاعلية.</p>
+        </div>
+        <div class="card">
+            <h3>Responsive Design</h3>
+            <p>تم تصميم الموقع ليكون متجاوبًا مع جميع الأجهزة، باستخدام تقنيات CSS مثل Flexbox وMedia Queries لضمان تجربة مستخدم ممتازة على الهواتف المحمولة والأجهزة اللوحية.</p>
+        </div>
+        <div class="card">
+            <h3>Version Control</h3>
+            <p>تم استخدام Git وGitHub لإدارة ومتابعة التغييرات في الكود، مما يضمن التعاون الفعال والتطوير المستمر.</p>
+        </div>
+        <div class="card">
+            <h3>bat </h3>
+            <p>قد استخدمتها لالغاء المهام الغير ضرورية في البي سي و تحسين اداه </p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .behind-the-scenes-container {
+        display: flex;
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 20px;
+    }
+
+    .card {
+        background-color: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 30px;
+        margin: 20px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex: 1 1 300px;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        color: #3282B8;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .card p {
+        color: #bbb;
+        font-size: 1rem;
+    }
+</style>
+
+<!-- FAQ Section -->
+<section class="section" id="faq">
+    <h2>الأسئلة الشائعة</h2>
+    <div class="faq-container">
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>ما هي خدماتك؟</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>أقدم خدامات لتسريع و زيادة اداء البي سي </p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>كيف يمكنني التواصل معك؟</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>يمكنك التواصل معي عبر البريد الإلكتروني أو من خلال وسائل التواصل الاجتماعي المدرجة في قسم الاتصال.</p>
+            </div>
+        </div>
+        <div class="faq-item">
+            <div class="faq-question">
+                <h3>ما هي خبراتك في البرمجة؟</h3>
+                <span class="faq-toggle">+</span>
+            </div>
+            <div class="faq-answer">
+                <p>لدي خبرة في تطوير الويب باستخدام HTML، CSS، JavaScript، React، Node.js، وPython.</p>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Privacy Policy Section for PC -->
+<section class="section pc-only" id="privacy-policy">
+    <h2>سياسة الخصوصية</h2>
+    <div class="privacy-policy-container">
+        <div class="card">
+            <h3>1. البيانات التي نقوم بجمعها</h3>
+            <p>نقوم بجمع البيانات التي تُقدّمها لنا مباشرةً عند استخدامك موقعنا، وتشمل:</p>
+            <ul>
+                <li>بيانات شخصية: مثل الاسم، البريد الإلكتروني، رقم الهاتف، وعنوان الشحن عند إنشاء حساب أو إتمام عملية شراء.</li>
+                <li>بيانات استخدام الموقع: مثل الصفحات التي تزورها، المنتجات التي تستعرضها، والأنشطة التي تقوم بها أثناء تصفح الموقع.</li>
+                <li>بيانات تقنية: مثل نوع الجهاز، نظام التشغيل، المتصفح، وعنوان IP الخاص بك لتحسين أدائنا التقني.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>2. كيف نستخدم بياناتك؟</h3>
+            <p>نستخدم بياناتك للأغراض التالية:</p>
+            <ul>
+                <li>تحسين تجربتك: لضمان سهولة التصفح وعرض المحتوى بما يناسب اهتماماتك.</li>
+                <li>إتمام الطلبات: لمعالجة الطلبات، توصيل المنتجات، وإبلاغك بحالة الشحن.</li>
+                <li>التواصل: للرد على استفساراتك أو إرسال إشعارات حول تحديثات المنتجات أو العروض.</li>
+                <li>تحليل الأداء: لفهم كيفية استخدام الموقع والعمل على تحسينه باستمرار.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>3. حماية بياناتك</h3>
+            <p>نحن ملتزمون باستخدام أعلى معايير الأمان لحماية بياناتك من الوصول غير المصرّح به أو التعديل أو الكشف. نستخدم تقنيات تشفير واتصالات آمنة أثناء نقل البيانات.</p>
+            <p>ملاحظة: على الرغم من جهودنا الكبيرة لحماية بياناتك، فإننا لا نضمن أمان البيانات بالكامل بسبب الطبيعة المفتوحة للإنترنت.</p>
+        </div>
+        <div class="card">
+            <h3>4. مشاركة البيانات</h3>
+            <p>نحن لا نشارك بياناتك الشخصية مع أي طرف ثالث، باستثناء الحالات التالية:</p>
+            <ul>
+                <li>عند الحاجة لإتمام معاملاتك (مثل شركات الشحن أو الدفع الإلكتروني).</li>
+                <li>إذا تطلب الأمر ذلك بموجب قانون أو إجراء قانوني.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>5. ملفات تعريف الارتباط (Cookies)</h3>
+            <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك عند استخدام الموقع. تُمكننا هذه الملفات من:</p>
+            <ul>
+                <li>حفظ تفضيلاتك.</li>
+                <li>عرض إعلانات مخصصة.</li>
+                <li>تحليل أداء الموقع.</li>
+            </ul>
+            <p>يمكنك إدارة إعدادات ملفات تعريف الارتباط من خلال إعدادات متصفحك.</p>
+        </div>
+        <div class="card">
+            <h3>6. حقوقك</h3>
+            <p>كمستخدم لموقع 𝗦𝗠𝗔𝗥𝗧 𝐒𝐭𝐨𝐫𝐞، لديك الحقوق التالية:</p>
+            <ul>
+                <li>الوصول إلى بياناتك: يمكنك طلب نسخة من البيانات التي نحتفظ بها.</li>
+                <li>تحديث بياناتك: يمكنك تعديل بياناتك الشخصية لضمان دقتها.</li>
+                <li>حذف بياناتك: يمكنك طلب حذف بياناتك من أنظمتنا.</li>
+            </ul>
+            <p>للاستفادة من هذه الحقوق، يُرجى التواصل معنا عبر البريد الإلكتروني: support@hamedstore.com.</p>
+        </div>
+        <div class="card">
+            <h3>7. التعديلات على سياسة الخصوصية</h3>
+            <p>نحتفظ بالحق في تعديل هذه السياسة عند الحاجة. سيتم إعلامك بأي تغييرات هامة من خلال الموقع أو البريد الإلكتروني. يُنصح بمراجعة هذه السياسة دوريًا.</p>
+        </div>
+        <div class="card">
+            <h3>8. التواصل معنا</h3>
+            <p>إذا كان لديك أي استفسار حول سياسة الخصوصية أو كيفية استخدام بياناتك، لا تتردد في التواصل معنا عبر:</p>
+            <ul>
+                <li>البريد الإلكتروني: gamayka94@gmail.com</li>
+                <li>الهاتف: +201270273521</li>
+            </ul>
+            <p>شكرًا لثقتكم بـ 𝗦𝗠𝗔𝗥𝗧 𝐒𝐭𝐨𝐫𝐞!</p>
+        </div>
+    </div>
+</section>
+
+<!-- Privacy Policy Section for Mobile -->
+<section class="section mobile-only" id="privacy-policy-mobile">
+    <h2>سياسة الخصوصية</h2>
+    <div class="privacy-policy-container">
+        <div class="card">
+            <h3>1. البيانات التي نقوم بجمعها</h3>
+            <p>نقوم بجمع البيانات التي تُقدّمها لنا مباشرةً عند استخدامك موقعنا، وتشمل:</p>
+            <ul>
+                <li>بيانات شخصية: مثل الاسم، البريد الإلكتروني، رقم الهاتف، وعنوان الشحن عند إنشاء حساب أو إتمام عملية شراء.</li>
+                <li>بيانات استخدام الموقع: مثل الصفحات التي تزورها، المنتجات التي تستعرضها، والأنشطة التي تقوم بها أثناء تصفح الموقع.</li>
+                <li>بيانات تقنية: مثل نوع الجهاز، نظام التشغيل، المتصفح، وعنوان IP الخاص بك لتحسين أدائنا التقني.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>2. كيف نستخدم بياناتك؟</h3>
+            <p>نستخدم بياناتك للأغراض التالية:</p>
+            <ul>
+                <li>تحسين تجربتك: لضمان سهولة التصفح وعرض المحتوى بما يناسب اهتماماتك.</li>
+                <li>إتمام الطلبات: لمعالجة الطلبات، توصيل المنتجات، وإبلاغك بحالة الشحن.</li>
+                <li>التواصل: للرد على استفساراتك أو إرسال إشعارات حول تحديثات المنتجات أو العروض.</li>
+                <li>تحليل الأداء: لفهم كيفية استخدام الموقع والعمل على تحسينه باستمرار.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>3. حماية بياناتك</h3>
+            <p>نحن ملتزمون باستخدام أعلى معايير الأمان لحماية بياناتك من الوصول غير المصرّح به أو التعديل أو الكشف. نستخدم تقنيات تشفير واتصالات آمنة أثناء نقل البيانات.</p>
+            <p>ملاحظة: على الرغم من جهودنا الكبيرة لحماية بياناتك، فإننا لا نضمن أمان البيانات بالكامل بسبب الطبيعة المفتوحة للإنترنت.</p>
+        </div>
+        <div class="card">
+            <h3>4. مشاركة البيانات</h3>
+            <p>نحن لا نشارك بياناتك الشخصية مع أي طرف ثالث، باستثناء الحالات التالية:</p>
+            <ul>
+                <li>عند الحاجة لإتمام معاملاتك (مثل شركات الشحن أو الدفع الإلكتروني).</li>
+                <li>إذا تطلب الأمر ذلك بموجب قانون أو إجراء قانوني.</li>
+            </ul>
+        </div>
+        <div class="card">
+            <h3>5. ملفات تعريف الارتباط (Cookies)</h3>
+            <p>نستخدم ملفات تعريف الارتباط لتحسين تجربتك عند استخدام الموقع. تُمكننا هذه الملفات من:</p>
+            <ul>
+                <li>حفظ تفضيلاتك.</li>
+                <li>عرض إعلانات مخصصة.</li>
+                <li>تحليل أداء الموقع.</li>
+            </ul>
+            <p>يمكنك إدارة إعدادات ملفات تعريف الارتباط من خلال إعدادات متصفحك.</p>
+        </div>
+        <div class="card">
+            <h3>6. حقوقك</h3>
+            <p>كمستخدم لموقع 𝗦𝗠𝗔𝗥𝗧 𝐒𝐭𝐨𝐫𝐞، لديك الحقوق التالية:</p>
+            <ul>
+                <li>الوصول إلى بياناتك: يمكنك طلب نسخة من البيانات التي نحتفظ بها.</li>
+                <li>تحديث بياناتك: يمكنك تعديل بياناتك الشخصية لضمان دقتها.</li>
+                <li>حذف بياناتك: يمكنك طلب حذف بياناتك من أنظمتنا.</li>
+            </ul>
+            <p>للاستفادة من هذه الحقوق، يُرجى التواصل معنا عبر البريد الإلكتروني: support@hamedstore.com.</p>
+        </div>
+        <div class="card">
+            <h3>7. التعديلات على سياسة الخصوصية</h3>
+            <p>نحتفظ بالحق في تعديل هذه السياسة عند الحاجة. سيتم إعلامك بأي تغييرات هامة من خلال الموقع أو البريد الإلكتروني. يُنصح بمراجعة هذه السياسة دوريًا.</p>
+        </div>
+        <div class="card">
+            <h3>8. التواصل معنا</h3>
+            <p>إذا كان لديك أي استفسار حول سياسة الخصوصية أو كيفية استخدام بياناتك، لا تتردد في التواصل معنا عبر:</p>
+            <ul>
+                <li>البريد الإلكتروني: gamayka94@gmail.com</li>
+                <li>الهاتف: +201270273521</li>
+            </ul>
+            <p>شكرًا لثقتكم بـ 𝗦𝗠𝗔𝗥𝗧 𝐒𝐭𝐨𝐫𝐞!</p>
+        </div>
+    </div>
+</section>
+
+<style>
+    .privacy-policy-container {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 20px;
+        justify-content: center;
+    }
+
+    .card {
+        background-color: #222;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        padding: 20px;
+        margin: 10px;
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        flex: 1 1 300px;
+    }
+
+    .card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 10px 20px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+        font-size: 1.5rem;
+        color: #3282B8;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+
+    .card p, .card ul {
+        color: #bbb;
+        font-size: 1rem;
+    }
+
+    .card ul {
+        padding-left: 20px;
+    }
+
+    .card ul li {
+        margin-bottom: 10px;
+    }
+</style>
+<div class="rating">
+    <h3>قيم موقعنا</h3>
+    <div class="stars">
+      <span data-value="5">★</span>
+      <span data-value="4">★</span>
+      <span data-value="3">★</span>
+      <span data-value="2">★</span>
+      <span data-value="1">★</span>
+    </div>
+    <p id="rating-result">لم يتم التقييم بعد</p>
+  </div>
+  
+  <style>
+  .rating {
+    text-align: center;
+    font-family: Arial, sans-serif;
+  }
+  
+  .stars {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+    cursor: pointer;
+    font-size: 2rem;
+    color: #ccc;
+  }
+  
+  .stars span:hover,
+  .stars span:hover ~ span {
+    color: #ffd700;
+  }
+  
+  .stars span.active,
+  .stars span.active ~ span {
+    color: #ffd700;
+  }
+  </style>
+<script>
+    const stars = document.querySelectorAll(".stars span");
+    const result = document.getElementById("rating-result");
+  
+    stars.forEach((star) => {
+      star.addEventListener("mouseover", function () {
+        resetStars();
+        highlightStars(this);
+      });
+  
+      star.addEventListener("click", function () {
+        resetStars();
+        highlightStars(this, true);
+        const rating = this.getAttribute("data-value");
+        result.textContent = `شكراً! لقد قمت بتقييم الموقع بـ ${rating} نجوم.`;
+  
+        // إرسال التقييم إلى PHP
+        saveRating(rating);
+      });
+    });
+  
+    function highlightStars(star, active = false) {
+      star.classList.add("active");
+      let prev = star.previousElementSibling;
+      while (prev) {
+        prev.classList.add("active");
+        prev = prev.previousElementSibling;
+      }
+      if (!active) {
+        star.classList.remove("active");
+      }
+    }
+  
+    function resetStars() {
+      stars.forEach((star) => star.classList.remove("active"));
+    }
+  
+    function saveRating(rating) {
+      fetch("save_rating.php", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/x-www-form-urlencoded",
+        },
+        body: `rating=${rating}`,
+      })
+        .then((response) => response.text())
+        .then((data) => {
+          console.log(data); // عرض الرد من PHP
+        })
+        .catch((error) => {
+          console.error("حدث خطأ أثناء حفظ التقييم:", error);
+        });
+    }
+  </script>
+  
+<!-- Terms and Conditions Section -->
+<section class="section" id="terms">
+    <h2>الشروط والأحكام</h2>
+    <div class="terms-container">
+        <p>مرحبًا بكم في موقع حامد . باستخدام هذا الموقع، فإنك توافق على الالتزام بالشروط والأحكام التالية:</p>
+        <ul>
+            <li>يجب استخدام الموقع لأغراض قانونية فقط.</li>
+            <li>لا يجوز لك استخدام الموقع بأي طريقة قد تسبب ضررًا للموقع أو تعطل الوصول إليه.</li>
+            <li>جميع المحتويات الموجودة على الموقع محمية بحقوق الطبع والنشر ولا يجوز إعادة إنتاجها دون إذن.</li>
+            <li>نحتفظ بالحق في تعديل هذه الشروط والأحكام في أي وقت دون إشعار مسبق.</li>
+            <li>باستخدامك للموقع، فإنك توافق على الالتزام بأي تغييرات تطرأ على هذه الشروط والأحكام.</li>
+        </ul>
+    </div>
+</section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 𝗦𝗠𝗔𝗥𝗧 𝐒𝐭𝐨𝐫𝐞. All rights reserved.</p>
+    </footer>
+
+    <!-- Back to top button -->
+    <button class="back-to-top" onclick="scrollToTop()">⬆</button>
+
+
+    <script>
+        // Scroll to Top
+        function scrollToTop() {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        }
+
+        // Back to top button visibility
+        window.addEventListener('scroll', () => {
+            const backToTopBtn = document.querySelector('.back-to-top');
+            if (window.scrollY > 300) {
+                backToTopBtn.classList.add('show');
+            } else {
+                backToTopBtn.classList.remove('show');
+            }
+        });
+
+        // Dark Mode Toggle
+        function toggleDarkMode() {
+            document.body.classList.toggle('dark-mode');
+        }
+
+        // Simulate Progress Bar
+        window.addEventListener('load', () => {
+            const progressBar = document.createElement('div');
+            progressBar.classList.add('progress-bar');
+            document.body.appendChild(progressBar);
+
+            let width = 0;
+            const interval = setInterval(() => {
+                if (width >= 100) {
+                    clearInterval(interval);
+                } else {
+                    width++;
+                    progressBar.style.width = width + '%';
+                }
+            }, 10);
+        });
+        AOS.init();
+        window.addEventListener('scroll', () => {
+    const elements = document.querySelectorAll('.fade-in');
+    elements.forEach(element => {
+        const position = element.getBoundingClientRect().top;
+        const screenPosition = window.innerHeight / 1.2;
+
+        if (position < screenPosition) {
+            element.classList.add('active');
+        } else {
+            element.classList.remove('active');
+        }
+    });
+});
+window.addEventListener('load', () => {
+    const loader = document.querySelector('.loader');
+    loader.classList.add('hidden');
+});
+window.addEventListener('scroll', () => {
+    const progressBar = document.querySelector('.progress-bar');
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    progressBar.style.width = progress + '%';
+});
+window.addEventListener('scroll', () => {
+    const progressBar = document.querySelector('.progress-bar');
+    const totalHeight = document.body.scrollHeight - window.innerHeight;
+    const progress = (window.scrollY / totalHeight) * 100;
+    progressBar.style.width = progress + '%';
+});
+    </script>
+</body>
+</html>
+<!-- Loader -->
+<div class="loader">
+    <div class="spinner"></div>
+</div>
+
+<style>
+    .spinner {
+        border: 16px solid #f3f3f3;
+        border-top: 16px solid #3282B8;
+        border-radius: 50%;
+        width: 120px;
+        height: 120px;
+        animation: spin 2s linear infinite;
+    }
+
+    @keyframes spin {
+        0% { transform: rotate(0deg); }
+        100% { transform: rotate(360deg); }
+    }
+</style>
+<!-- Interactive Particle Background -->
+<div id="particles-js"></div>
+
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script>
+    particlesJS("particles-js", {
+        "particles": {
+            "number": {
+                "value": 80,
+                "density": {
+                    "enable": true,
+                    "value_area": 800
+                }
+            },
+            "color": {
+                "value": "#ffffff"
+            },
+            "shape": {
+                "type": "circle",
+                "stroke": {
+                    "width": 0,
+                    "color": "#000000"
+                },
+                "polygon": {
+                    "nb_sides": 5
+                },
+                "image": {
+                    "src": "img/github.svg",
+                    "width": 100,
+                    "height": 100
+                }
+            },
+            "opacity": {
+                "value": 0.5,
+                "random": false,
+                "anim": {
+                    "enable": false,
+                    "speed": 1,
+                    "opacity_min": 0.1,
+                    "sync": false
+                }
+            },
+            "size": {
+                "value": 3,
+                "random": true,
+                "anim": {
+                    "enable": false,
+                    "speed": 40,
+                    "size_min": 0.1,
+                    "sync": false
+                }
+            },
+            "line_linked": {
+                "enable": true,
+                "distance": 150,
+                "color": "#ffffff",
+                "opacity": 0.4,
+                "width": 1
+            },
+            "move": {
+                "enable": true,
+                "speed": 6,
+                "direction": "none",
+                "random": false,
+                "straight": false,
+                "out_mode": "out",
+                "bounce": false,
+                "attract": {
+                    "enable": false,
+                    "rotateX": 600,
+                    "rotateY": 1200
+                }
+            }
+        },
+        "interactivity": {
+            "detect_on": "canvas",
+            "events": {
+                "onhover": {
+                    "enable": true,
+                    "mode": "repulse"
+                },
+                "onclick": {
+                    "enable": true,
+                    "mode": "push"
+                },
+                "resize": true
+            },
+            "modes": {
+                "grab": {
+                    "distance": 400,
+                    "line_linked": {
+                        "opacity": 1
+                    }
+                },
+                "bubble": {
+                    "distance": 400,
+                    "size": 40,
+                    "duration": 2,
+                    "opacity": 8,
+                    "speed": 3
+                },
+                "repulse": {
+                    "distance": 200,
+                    "duration": 0.4
+                },
+                "push": {
+                    "particles_nb": 4
+                },
+                "remove": {
+                    "particles_nb": 2
+                }
+            }
+        },
+        "retina_detect": true
+    });
+</script>
+
+<style>
+    #particles-js {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0;
+        left: 0;
+        z-index: -1;
+    }
+</style>
+<style>
+    nav {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: rgba(0, 0, 0, 0.8);
+        padding: 15px 20px;
+        z-index: 1000;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.5);
+        transition: background-color 0.3s ease;
+    }
+
+    .nav-container {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        font-size: 1.8rem;
+        font-weight: bold;
+        color: #3282B8;
+    }
+
+    .nav-items {
+        display: flex;
+        gap: 30px;
+    }
+
+    nav a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+        letter-spacing: 1px;
+        font-weight: 600;
+        transition: color 0.3s ease;
+        position: relative;
+    }
+
+    nav a::before {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: -100%;
+        background-color: #3282B8;
+        transition: left 0.3s ease;
+    }
+
+    nav a:hover::before {
+        left: 0;
+    }
+
+    nav a:hover {
+        color: #BBE1FA;
+    }
+
+    .btn-toggle {
+        background: none;
+        border: none;
+        color: #fff;
+        font-size: 1.5rem;
+        cursor: pointer;
+        transition: color 0.3s ease;
+    }
+
+    @media (max-width: 768px) {
+        .nav-items {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const nav = document.querySelector('nav');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.9)';
+            } else {
+                nav.style.backgroundColor = 'rgba(0, 0, 0, 0.8)';
+            }
+        });
+    });
+</script>
+<script>
+    document.querySelectorAll('nav a').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            const targetId = this.getAttribute('href').substring(1);
+            const targetElement = document.getElementById(targetId);
+            window.scrollTo({
+                top: targetElement.offsetTop,
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+<style>
+    body {
+        font-family: 'Cairo', sans-serif;
+    }
+</style>
+<style>
+    /* Shadow and Glow Effects */
+    .shadow-glow {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2), 0 6px 20px rgba(0, 0, 0, 0.19);
+        transition: box-shadow 0.3s ease;
+    }
+
+    .shadow-glow:hover {
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4), 0 12px 40px rgba(0, 0, 0, 0.38);
+    }
+
+    /* Custom Mouse Effects */
+    body {
+        cursor: url('https://example.com/custom-cursor.png'), auto;
+    }
+
+    a:hover {
+        cursor: url('https://example.com/custom-cursor-hover.png'), auto;
+    }
+
+    /* Custom Scrollbar */
+    ::-webkit-scrollbar {
+        width: 12px;
+    }
+
+    ::-webkit-scrollbar-track {
+        background: #111;
+    }
+
+    ::-webkit-scrollbar-thumb {
+        background-color: #3282B8;
+        border-radius: 10px;
+        border: 3px solid #111;
+    }
+
+    /* Scroll Animations */
+    .scroll-animation {
+        opacity: 0;
+        transform: translateY(50px);
+        transition: opacity 0.5s ease, transform 0.5s ease;
+    }
+
+    .scroll-animation.active {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    /* Typing Interaction */
+    .typing-effect {
+        font-family: 'Courier New', Courier, monospace;
+        white-space: nowrap;
+        overflow: hidden;
+        border-right: 3px solid;
+        animation: typing 3s steps(30, end), blink-caret 0.75s step-end infinite;
+    }
+
+    @keyframes typing {
+        from { width: 0; }
+        to { width: 100%; }
+    }
+
+    @keyframes blink-caret {
+        from, to { border-color: transparent; }
+        50% { border-color: #3282B8; }
+    }
+
+    /* Background Blur Effects */
+    .blur-background {
+        backdrop-filter: blur(10px);
+        -webkit-backdrop-filter: blur(10px);
+    }
+</style>
+
+<script>
+    // Scroll Animations
+    window.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.scroll-animation');
+        elements.forEach(element => {
+            const position = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (position < screenPosition) {
+                element.classList.add('active');
+            } else {
+                element.classList.remove('active');
+            }
+        });
+    });
+
+    // Typing Effect
+    document.addEventListener('DOMContentLoaded', () => {
+        const typingElements = document.querySelectorAll('.typing-effect');
+        typingElements.forEach(element => {
+            const text = element.textContent;
+            element.textContent = '';
+            let i = 0;
+            const interval = setInterval(() => {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                } else {
+                    clearInterval(interval);
+                }
+            }, 100);
+        });
+    });
+</script>
+<script>
+    // Apply 3D Effects on Scroll
+    document.addEventListener('scroll', () => {
+        const elements = document.querySelectorAll('.card, .section, .hero-content');
+        elements.forEach(element => {
+            const position = element.getBoundingClientRect().top;
+            const screenPosition = window.innerHeight / 1.2;
+
+            if (position < screenPosition) {
+                element.style.transform = 'rotateY(10deg)';
+            } else {
+                element.style.transform = 'rotateY(0deg)';
+            }
+        });
+    });
+
+    // Apply 3D Hover Effects
+    document.querySelectorAll('.card, .btn-3d').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            element.style.transform = 'rotateY(10deg) scale(1.05)';
+        });
+
+        element.addEventListener('mouseleave', () => {
+            element.style.transform = 'rotateY(0deg) scale(1)';
+        });
+    });
+</script>
+<!-- Text Hover Effect -->
+<style>
+    .text-hover-effect {
+        position: relative;
+        display: inline-block;
+        cursor: pointer;
+    }
+
+    .text-hover-effect::after {
+        content: '';
+        position: absolute;
+        width: 100%;
+        height: 2px;
+        bottom: 0;
+        left: 0;
+        background-color: #3282B8;
+        visibility: hidden;
+        transform: scaleX(0);
+        transition: all 0.3s ease-in-out;
+    }
+
+    .text-hover-effect:hover::after {
+        visibility: visible;
+        transform: scaleX(1);
+    }
+</style>
+
+<script>
+    document.querySelectorAll('.text-hover-effect').forEach(element => {
+        element.addEventListener('mouseenter', () => {
+            element.style.color = '#3282B8';
+        });
+
+        element.addEventListener('mouseleave', () => {
+            element.style.color = '';
+        });
+    });
+</script>
+
+</div>
+<!-- Minified CSS -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Mada&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Cairo&family=Roboto&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+<!-- Minified JS -->
+<script src="https://cdn.jsdelivr.net/particles.js/2.0.0/particles.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.9.1/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.1/aos.min.js"></script>
+
+<!-- CDN for Images -->
+<style>
+    .hero {
+        background: url('https://cdn.example.com/images/tech-web.jpg') no-repeat center center/cover;
+    }
+</style>
+<!-- Responsive Design Enhancements -->
+<style>
+    /* Mobile Styles */
+    @media (max-width: 576px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+        }
+
+        .section p {
+            font-size: 0.9rem;
+        }
+
+        .card {
+            margin: 10px;
+        }
+
+        .nav-items {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    /* Tablet Styles */
+    @media (min-width: 577px) and (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+        }
+
+        .card {
+            margin: 15px;
+        }
+
+        .nav-items {
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+
+    /* Desktop Styles */
+    @media (min-width: 769px) {
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+        }
+
+        .card {
+            margin: 20px;
+        }
+
+        .nav-items {
+            flex-direction: row;
+            gap: 30px;
+        }
+    }
+</style>
+<!-- Toast Notifications -->
+<div id="toast" class="toast"></div>
+
+<style>
+    .toast {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background: #3282B8;
+        color: #fff;
+        padding: 15px 20px;
+        border-radius: 5px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        opacity: 0;
+        transition: opacity 0.5s ease, transform 0.5s ease;
+        transform: translateY(50px);
+        z-index: 1000;
+    }
+
+    .toast.show {
+        opacity: 1;
+        transform: translateY(0);
+    }
+</style>
+
+<script>
+    function showToast(message) {
+        const toast = document.getElementById('toast');
+        toast.textContent = message;
+        toast.classList.add('show');
+        setTimeout(() => {
+            toast.classList.remove('show');
+        }, 3000);
+    }
+
+    // Example usage: showToast('Your message has been sent!');
+</script>
+
+<!-- Interactive Cursors -->
+<style>
+    a {
+        cursor: url('https://example.com/custom-cursor.png'), auto;
+    }
+
+    a:hover {
+        cursor: url('https://example.com/custom-cursor-hover.png'), auto;
+    }
+</style>
+
+<script>
+    // Example usage for toast notifications
+    document.querySelector('form').addEventListener('submit', (e) => {
+        e.preventDefault();
+        showToast('Your message has been sent!');
+    });
+
+    document.querySelectorAll('.btn').forEach(button => {
+        button.addEventListener('click', () => {
+            showToast('Your download will start shortly!');
+        });
+    });
+</script>
+<!-- Smooth Scroll -->
+<script>
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute('href')).scrollIntoView({
+                behavior: 'smooth'
+            });
+        });
+    });
+</script>
+
+<!-- Responsive Design Enhancements -->
+<style>
+    /* Mobile Styles */
+    @media (max-width: 576px) {
+        .hero h1 {
+            font-size: 2rem;
+        }
+
+        .hero p {
+            font-size: 1rem;
+        }
+
+        .section h2 {
+            font-size: 1.8rem;
+        }
+
+        .section p {
+            font-size: 0.9rem;
+        }
+
+        .card {
+            margin: 10px;
+        }
+
+        .nav-items {
+            flex-direction: column;
+            gap: 10px;
+        }
+    }
+
+    /* Tablet Styles */
+    @media (min-width: 577px) and (max-width: 768px) {
+        .hero h1 {
+            font-size: 2.5rem;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+        }
+
+        .section h2 {
+            font-size: 2rem;
+        }
+
+        .section p {
+            font-size: 1rem;
+        }
+
+        .card {
+            margin: 15px;
+        }
+
+        .nav-items {
+            flex-direction: row;
+            gap: 20px;
+        }
+    }
+
+    /* Desktop Styles */
+    @media (min-width: 769px) {
+        .hero h1 {
+            font-size: 3.5rem;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        .section h2 {
+            font-size: 2.5rem;
+        }
+
+        .section p {
+            font-size: 1.1rem;
+        }
+
+        .card {
+            margin: 20px;
+        }
+
+        .nav-items {
+            flex-direction: row;
+            gap: 30px;
+        }
+    }
+</style>
+
+<!-- Skeleton Screen for Loading Content -->
+<div class="skeleton-screen">
+    <div class="skeleton-header"></div>
+    <div class="skeleton-paragraph"></div>
+    <div class="skeleton-paragraph"></div>
+    <div class="skeleton-paragraph"></div>
+</div>
+
+<style>
+    .skeleton-screen {
+        display: none; /* Initially hidden */
+        background-color: #111;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .skeleton-header {
+        width: 60%;
+        height: 20px;
+        background-color: #333;
+        margin-bottom: 10px;
+        border-radius: 4px;
+    }
+
+    .skeleton-paragraph {
+        width: 100%;
+        height: 15px;
+        background-color: #333;
+        margin-bottom: 10px;
+        border-radius: 4px;
+    }
+</style>
+
+<script>
+    document.addEventListener('DOMContentLoaded', () => {
+        const skeletonScreen = document.querySelector('.skeleton-screen');
+        skeletonScreen.style.display = 'block';
+
+        // Simulate data loading
+        setTimeout(() => {
+            skeletonScreen.style.display = 'none';
+            // Show actual content here
+        }, 3000); // Adjust the timeout as needed
+    });
+</script>
+
+
+
